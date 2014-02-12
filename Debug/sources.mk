@@ -24,6 +24,7 @@ C_UPPER_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/stone \
+src/player/implementation/IA \
 src/player \
 src/model \
 src \

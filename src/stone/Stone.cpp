@@ -7,11 +7,28 @@
 
 #include "Stone.h"
 
-Stone::Stone() {
-	// TODO Auto-generated constructor stub
+Stone::Stone() : posX(0), posY(0){
+
+}
+
+Stone::Stone(int x, int y) : posX(x), posY(y) {
 
 }
 
 Stone::~Stone() {
 	// TODO Auto-generated destructor stub
+}
+
+void Stone::setX(int x){
+	posX = x;
+}
+int Stone::getX(){
+	return posX;
+}
+
+void Stone::setY(int y){
+	posY = y;
+}
+int Stone::getY(){
+	return posY;
 }

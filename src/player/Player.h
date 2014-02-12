@@ -12,20 +12,30 @@
 #include "../stone/Stone.h"
 using namespace std;
 
+/**
+ * Abstract class defining a player
+ */
 class Player {
 
 	private:
+		/**
+		 * stones - list of stones owned by the player
+		 */
 		list<Stone*> stones;
 
 	public:
-		//Constructeur et Destructeur
 		Player();
 		virtual ~Player();
 
-		//Méthodes
+		/**
+		 * Abstract method - define how a player play :)
+		 */
 		virtual void play() = 0;
 
-		//Getters & Setterslist<Stone*>
+		/**
+		 * getter of stones
+		 * @return stones : list<Stones*>
+		 */
 		list<Stone*> getStones();
 };
 
