@@ -9,9 +9,13 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/stone/subdir.mk
+-include src/player/implementation/remote/subdir.mk
+-include src/player/implementation/human/subdir.mk
 -include src/player/implementation/IA/subdir.mk
 -include src/player/subdir.mk
 -include src/model/subdir.mk
+-include src/gui/subdir.mk
+-include src/database/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -48,7 +52,7 @@ all: Go
 Go: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "Go" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/usr/lib -o "Go" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

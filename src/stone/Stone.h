@@ -12,8 +12,17 @@
  * Define a Stone owned by a player
  */
 class Stone {
+
 private:
-	int posX, posY;
+	/**
+	 * posX : define the position X of the Stone
+	 */
+	int posX;
+
+	/**
+	 * posY : define the position Y of the Stone
+	 */
+	int posY;
 
 public:
 	Stone();

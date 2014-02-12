@@ -4,17 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/player/Player.cpp 
+../src/gui/View.cpp 
 
 OBJS += \
-./src/player/Player.o 
+./src/gui/View.o 
 
 CPP_DEPS += \
-./src/player/Player.d 
+./src/gui/View.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/player/%.o: ../src/player/%.cpp
+src/gui/%.o: ../src/gui/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
 	g++ -I/usr/include/library -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"

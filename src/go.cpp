@@ -6,20 +6,48 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+// namespace std
 #include <iostream>
 #include <iterator>
 #include <list>
-#include "stone/Stone.h"
+
+// Model
 #include "model/Model.h"
+
+// Stone
+#include "stone/Stone.h"
+
+// Player
 #include "player/Player.h"
 #include "player/implementation/IA/IAPlayer.h"
+#include "player/implementation/human/HumanPlayer.h"
+#include "player/implementation/remote/RemotePlayer.h"
+
+// Database
+#include "database/Database.h"
 
 using namespace std;
 
 int main() {
-	// Test IA Player //
+	/* -------- DATABASE TEST ------------------------------------------ */
+	Database *db = new Database("localhost","root","arydjM","go");
+	db->testConnection();
+
+	/* -------- PLAYERS TEST ------------------------------------------ */
 	Player* myPlayer = new IAPlayer();
 	myPlayer->play();
+
+	Player* anOtherPlayer = new HumanPlayer();
+	anOtherPlayer->play();
+
+	Player* aRemotePlayer = new RemotePlayer();
+	aRemotePlayer->play();
+
+	//Ne compile pas et c'est tant mieux :) //
+	//Player* otherPlayer = new Player();
+
+	/* -------- STONES TEST ------------------------------------------ */
+	cout << "\nPierre de myPlayer : " << endl;
 
 	list<Stone*> stones = myPlayer->getStones();
 	stones.push_front(new Stone(5,6));
@@ -30,10 +58,8 @@ int main() {
     	cout << "X:" << aStone->getX() << "\tY: " << aStone->getY() << endl;
     }
 
-	//Ne compile pas et c'est tant mieux :) //
-	//Player* otherPlayer = new Player();
-
-	cout << "\n" << endl;
+    /* -------- END OF TEST ------------------------------------------ */
+	cout << "" << endl;
 	cout << "end of test" << endl; // prints !!!Hello World!!!
 	return 0;
 }
