@@ -1,9 +1,9 @@
 //============================================================================
-// Name        : test.cpp
-// Author      : 
+// Name        : go.cpp
+// Author      : lama
 // Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Copyright   : y'en n'a pas
+// Description : paie ton chinois :<
 //============================================================================
 
 // namespace std
@@ -30,8 +30,23 @@ using namespace std;
 
 int main() {
 	/* -------- DATABASE TEST ------------------------------------------ */
-	Database *db = new Database("localhost","root","arydjM","go");
-	db->testConnection();
+	Database* db = new Database("localhost","root","arydjM","go");
+
+	MYSQL_RES* resource;
+	MYSQL_ROW result;
+
+	db->connect();
+	db->getInfo();
+
+	resource = db->execQuery("SELECT * FROM test");
+	printf("--- SELECT * FROM test ---\n");
+	while ((result = mysql_fetch_row(resource))) {
+		printf("%s - %s\n", result[0], result[1]);
+	}
+	printf("\n");
+	mysql_free_result(resource);
+
+	db->disconnect();
 
 	/* -------- PLAYERS TEST ------------------------------------------ */
 	Player* myPlayer = new IAPlayer();

@@ -24,6 +24,11 @@ private:
 	 */
 	int posY;
 
+	/**
+	 * state : define if the stone is alive or dead
+	 */
+	bool state;
+
 public:
 	Stone();
 	Stone(int x, int y);
@@ -35,6 +40,9 @@ public:
 
 	void setY(int y);
 	int getY();
+
+	void setState(bool state);
+	bool getState();
 };
 
 #endif /* STONE_H_ */

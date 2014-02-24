@@ -7,11 +7,13 @@
 
 #include "Stone.h"
 
-Stone::Stone() : posX(0), posY(0){
+Stone::Stone() :
+		posX(0), posY(0), state(true) {
 
 }
 
-Stone::Stone(int x, int y) : posX(x), posY(y) {
+Stone::Stone(int x, int y) :
+		posX(x), posY(y), state(true) {
 
 }
 
@@ -19,16 +21,24 @@ Stone::~Stone() {
 	// TODO Auto-generated destructor stub
 }
 
-void Stone::setX(int x){
+void Stone::setX(int x) {
 	posX = x;
 }
-int Stone::getX(){
+int Stone::getX() {
 	return posX;
 }
 
-void Stone::setY(int y){
+void Stone::setY(int y) {
 	posY = y;
 }
-int Stone::getY(){
+int Stone::getY() {
 	return posY;
+}
+
+void Stone::setState(bool state) {
+	this->state = state;
+}
+
+bool Stone::getState() {
+	return this->state;
 }

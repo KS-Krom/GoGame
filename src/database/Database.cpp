@@ -7,10 +7,6 @@
 
 #include "Database.h"
 
-Database::Database() {
-
-}
-
 /**
  * \param host : the host of the db
  * \param login : the login of the db
@@ -37,8 +33,10 @@ Database::~Database() {
 void Database::connect() {
 	if (!mysql_real_connect(connection, this->host, this->login, this->password,
 			this->database, 0, NULL, 0)) {
-		printf("--------- [DATABASE] connect : connection error --------------------------\n");
-		printf("Host: %s\nLogin: %s\nDatabase: %s\n",this->host, this->login, this->database);
+		printf(
+				"--------- [DATABASE] connect : connection error --------------------------\n");
+		printf("Host: %s\nLogin: %s\nDatabase: %s\n", this->host, this->login,
+				this->database);
 		printf("%s\n", mysql_error(connection));
 	}
 }
@@ -78,14 +76,13 @@ void Database::getInfo() {
 
 	resource = execQuery("SHOW DATABASES");
 
-    printf("Databases:\n");
+	printf("Databases:\n");
 
-    /* Fetch & print each row */
-    while((result = mysql_fetch_row(resource))) {
-        printf("%s\n", result[0]);
-    }
-    printf("\n");
-
+	/* Fetch & print each row */
+	while ((result = mysql_fetch_row(resource))) {
+		printf("%s\n", result[0]);
+	}
+	printf("\n");
 
 	mysql_free_result(resource);
 }
@@ -96,9 +93,10 @@ void Database::getInfo() {
  * \return a MYSQL_RES*
  */
 MYSQL_RES* Database::execQuery(const char* query) {
-	if(mysql_query(connection, query)){
-		printf("\n\n--------- [DATABASE] execQuery : unable to exec query --------------------------\n");
-		printf("Query: %s\n",query);
+	if (mysql_query(connection, query)) {
+		printf(
+				"\n\n--------- [DATABASE] execQuery : unable to exec query --------------------------\n");
+		printf("Query: %s\n", query);
 		printf("%s\n\n", mysql_error(connection));
 	}
 
@@ -116,7 +114,7 @@ void Database::testConnection() {
 	this->getInfo();
 
 	resource = execQuery("SELECT * FROM test");
-	 printf("--- SELECT * FROM test ---\n");
+	printf("--- SELECT * FROM test ---\n");
 	while ((result = mysql_fetch_row(resource))) {
 		printf("%s - %s\n", result[0], result[1]);
 	}
