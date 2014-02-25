@@ -15,13 +15,13 @@
 #include "model/Model.h"
 
 // Stone
-#include "stone/Stone.h"
+#include "model/bean/stone/Stone.h"
 
 // Player
-#include "player/Player.h"
-#include "player/implementation/IA/IAPlayer.h"
-#include "player/implementation/human/HumanPlayer.h"
-#include "player/implementation/remote/RemotePlayer.h"
+#include "model/bean/player/Player.h"
+#include "model/bean/player/implementation/IA/IAPlayer.h"
+#include "model/bean/player/implementation/human/HumanPlayer.h"
+#include "model/bean/player/implementation/remote/RemotePlayer.h"
 
 // Database
 #include "database/Database.h"
@@ -62,7 +62,7 @@ int main() {
 	//Player* otherPlayer = new Player();
 
 	/* -------- STONES TEST ------------------------------------------ */
-	cout << "\nPierre de myPlayer : " << endl;
+	/*cout << "\nPierre de myPlayer : " << endl;
 
 	list<Stone*> stones = myPlayer->getStones();
 	stones.push_front(new Stone(5,6));
@@ -71,7 +71,7 @@ int main() {
     for(list<Stone*>::iterator it = stones.begin(); it != stones.end(); ++it) {
     	Stone* aStone = (Stone*)*it;
     	cout << "X:" << aStone->getX() << "\tY: " << aStone->getY() << endl;
-    }
+    }*/
 
     /* -------- END OF TEST ------------------------------------------ */
 	cout << "" << endl;

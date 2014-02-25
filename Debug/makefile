@@ -8,11 +8,15 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/stone/subdir.mk
--include src/player/implementation/remote/subdir.mk
--include src/player/implementation/human/subdir.mk
--include src/player/implementation/IA/subdir.mk
--include src/player/subdir.mk
+-include src/model/dao/player/subdir.mk
+-include src/model/dao/partie/subdir.mk
+-include src/model/bean/stone/subdir.mk
+-include src/model/bean/player/implementation/remote/subdir.mk
+-include src/model/bean/player/implementation/human/subdir.mk
+-include src/model/bean/player/implementation/IA/subdir.mk
+-include src/model/bean/player/subdir.mk
+-include src/model/bean/partie/subdir.mk
+-include src/model/bean/goban/subdir.mk
 -include src/model/subdir.mk
 -include src/gui/subdir.mk
 -include src/database/subdir.mk
@@ -52,7 +56,7 @@ all: Go
 Go: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/usr/lib -o "Go" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "Go" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

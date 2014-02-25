@@ -23,11 +23,15 @@ C_UPPER_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-src/stone \
-src/player/implementation/remote \
-src/player/implementation/human \
-src/player/implementation/IA \
-src/player \
+src/model/dao/player \
+src/model/dao/partie \
+src/model/bean/stone \
+src/model/bean/player/implementation/remote \
+src/model/bean/player/implementation/human \
+src/model/bean/player/implementation/IA \
+src/model/bean/player \
+src/model/bean/partie \
+src/model/bean/goban \
 src/model \
 src/gui \
 src \
