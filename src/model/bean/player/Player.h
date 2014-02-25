@@ -10,7 +10,7 @@
 
 #include <list>
 #include <string>
-#include "../stone/Stone.h"
+
 using namespace std;
 
 /**
@@ -30,7 +30,7 @@ class Player {
 		string name;
 
 	public:
-		Player();
+		Player(int id, string name);
 		virtual ~Player();
 
 		/**

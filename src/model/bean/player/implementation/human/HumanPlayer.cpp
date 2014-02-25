@@ -7,7 +7,7 @@
 
 #include "HumanPlayer.h"
 
-HumanPlayer::HumanPlayer() {
+HumanPlayer::HumanPlayer() : Player(0, "") {
 	// TODO Auto-generated constructor stub
 
 }

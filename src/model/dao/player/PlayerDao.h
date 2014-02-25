@@ -8,9 +8,9 @@
 #ifndef PLAYERDAO_H_
 #define PLAYERDAO_H_
 
-#include "../../database/Database.h"
-#include "../bean/player/Player.h"
-#include "../bean/player/implementation/remote/RemotePlayer.h"
+#include "../../../database/Database.h"
+#include "../../bean/player/Player.h"
+#include "../../bean/player/implementation/remote/RemotePlayer.h"
 class PlayerDao {
 
 private:
@@ -21,6 +21,8 @@ public:
 
 	list<Player*> getAll();
 	Player* get(int id);
+
+	//Stone minMax();
 
 	virtual ~PlayerDao();
 };

@@ -7,7 +7,7 @@
 
 #include "Player.h"
 
-Player::Player() {
+Player::Player(int id, string name) : id(id), name(name){
 
 }
 

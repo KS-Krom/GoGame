@@ -8,12 +8,14 @@
 #include "Stone.h"
 
 Stone::Stone() :
-		posX(0), posY(0), state(true) {
+idPion(0), posX(0), posY(0), pionCol(NULL), etatPion(
+		NULL), goban(){
 
 }
 
-Stone::Stone(int x, int y) :
-		posX(x), posY(y), state(true) {
+Stone::Stone(int id, int x, int y, string pionCol, string etatPion, Goban goban) :
+		idPion(id), posX(x), posY(y), pionCol(pionCol), etatPion(
+				etatPion), goban(goban) {
 
 }
 
@@ -33,12 +35,4 @@ void Stone::setY(int y) {
 }
 int Stone::getY() {
 	return posY;
-}
-
-void Stone::setState(bool state) {
-	this->state = state;
-}
-
-bool Stone::getState() {
-	return this->state;
 }

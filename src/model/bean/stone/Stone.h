@@ -13,22 +13,21 @@
 #include <stdlib.h>
 #include "../goban/Goban.h"
 
-namespace color {
-	enum colorId {
-		BLANC = 0, NOIR = 1, SIZE_OF_ENUM
-	};
-	static const char* color[SIZE_OF_ENUM] = { "Blanc", "Noir" };
-}
-
-namespace status {
-	enum statusId {
-		VIVANT = 0, MORT = 1, SIZE_OF_ENUM
-	};
-	static const char* status[SIZE_OF_ENUM] = { "Vivant", "Mort" };
-}
+//namespace color {
+//	enum colorId {
+//		BLANC = 0, NOIR = 1, SIZE_OF_ENUM
+//	};
+//	static const char* color[SIZE_OF_ENUM] = { "Blanc", "Noir" };
+//}
+//
+//namespace status {
+//	enum statusId {
+//		VIVANT = 0, MORT = 1, SIZE_OF_ENUM
+//	};
+//	static const char* status[SIZE_OF_ENUM] = { "Vivant", "Mort" };
+//}
 
 using namespace std;
-
 /**
  * Define a Stone owned by a player
  */
@@ -41,15 +40,6 @@ private:
 	int idPion;
 
 	/**
-	 * the goban of the stone
-	 */
-	//Goban goban;
-
-	string pionCol;
-
-	string etatPion;
-
-	/**
 	 * posX : define the position X of the Stone
 	 */
 	int posX;
@@ -59,14 +49,23 @@ private:
 	 */
 	int posY;
 
+
+	string pionCol;
+
 	/**
 	 * state : define if the stone is alive or dead
 	 */
-	bool state;
+	string etatPion;
+
+
+	/**
+	 * the goban of the stone
+	 */
+	Goban goban;
 
 public:
 	Stone();
-	Stone(int x, int y);
+	Stone(int id, int x, int y, string pionCol,string etatPion, Goban goban);
 
 	virtual ~Stone();
 

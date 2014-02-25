@@ -7,7 +7,7 @@
 
 #include "RemotePlayer.h"
 
-RemotePlayer::RemotePlayer() {
+RemotePlayer::RemotePlayer() : Player(0, "") {
 	// TODO Auto-generated constructor stub
 
 }

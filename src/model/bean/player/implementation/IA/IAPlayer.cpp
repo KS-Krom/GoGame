@@ -6,7 +6,7 @@
  */
 
 #include "IAPlayer.h"
-IAPlayer::IAPlayer() : Player() {
+IAPlayer::IAPlayer() : Player(0, "") {
 	// TODO Auto-generated constructor stub
 
 }

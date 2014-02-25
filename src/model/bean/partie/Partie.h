@@ -14,14 +14,16 @@
 #include <iostream>
 #include <ctime>
 
+#include "../player/Player.h"
+
 using namespace std;
 
-namespace statusPlayer {
-	enum statusId {
-		ENCOURS = 0, TERMINE = 1, SIZE_OF_ENUM
-	};
-	static const char* status[SIZE_OF_ENUM] = { "En cours", "Terminé" };
-};
+//namespace statusPlayer {
+//	enum statusId {
+//		ENCOURS = 0, TERMINE = 1, SIZE_OF_ENUM
+//	};
+//	static const char* status[SIZE_OF_ENUM] = { "En cours", "Terminé" };
+//}
 
 class Partie {
 
@@ -34,8 +36,9 @@ private:
 
 public:
 	Partie();
-	virtual ~Partie(int idPartie, Player* joueurNoir, Player* joueurBlanc,
-			string etatPartie, time_t heureFin);
+	Partie(int idPartie,Player* joueurNoir, Player* joueurBlanc,string etatPartie, time_t heureFin);
+
+	virtual ~Partie();
 };
 
 #endif /* PARTIE_H_ */
